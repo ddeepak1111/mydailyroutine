@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Record Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .average-container {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+
+    .average-label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Record Details {{ record.recordid }}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Record Score</th>
+        <th>Average Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sleep</td>
+        <td>{{ score.sleep_score }}</td>
+        <td>{{ avg_scores.sleep_average }}</td>
+      </tr>
+      <tr>
+        <td>Yoga</td>
+        <td>{{ score.yoga_score }}</td>
+        <td>{{ avg_scores.yoga_average }}</td>
+      </tr>
+      <tr>
+        <td>Gym</td>
+        <td>{{ score.gym_score }}</td>
+        <td>{{ avg_scores.gym_average }}</td>
+      </tr>
+      <tr>
+        <td>Walking</td>
+        <td>{{ score.walking_score }}</td>
+        <td>{{ avg_scores.walking_average }}</td>
+      </tr>
+      <tr>
+        <td>Reading</td>
+        <td>{{ score.reading_score }}</td>
+        <td>{{ avg_scores.reading_average }}</td>
+      </tr>
+      <tr>
+        <td>Skills Development</td>
+        <td>{{ score.skills_development_score }}</td>
+        <td>{{ avg_scores.skills_development_average }}</td>
+      </tr>
+      <tr>
+        <td>Water Intake</td>
+        <td>{{ score.water_intake_score }}</td>
+        <td>{{ avg_scores.water_intake_average }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

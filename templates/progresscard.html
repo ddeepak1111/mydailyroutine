@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Progress Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Progress Card</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Record ID</th>
+        <th>Sleep</th>
+        <th>Yoga</th>
+        <th>Gym</th>
+        <th>Walking</th>
+        <th>Reading</th>
+        <th>Skills Development</th>
+        <th>Water Intake</th>
+        <th>Expenses</th>
+        <th>Todays Diary</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in records %}
+        <tr>
+          <td><a href="{% url 'records:recorddetails' record.recordid %}">{{ record.recordid }}</a></td>
+          <td>{{ record.sleep }}</td>
+          <td>{{ record.yoga }}</td>
+          <td>{{ record.gym }}</td>
+          <td>{{ record.walking }}</td>
+          <td>{{ record.reading }}</td>
+          <td>{{ record.skills_development }}</td>
+          <td>{{ record.water_intake }}</td>
+          <td>{{ record.expenses }}</td>
+          <td>{{ record.todays_dairy }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

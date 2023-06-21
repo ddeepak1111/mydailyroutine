@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Daily Routine</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .button-container1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);  /* 3 columns */
+      gap: 10px;  /* Add some spacing between buttons */
+      align-items: center;
+    }
+    .button-container2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+      gap: 10px;  /* Add some spacing between buttons */
+      align-items: center;
+    }
+    .button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;  /* Add some spacing between the two div sections */
+}
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+    
+    .button.sleep {
+      background-color: #1E90FF;  /* Change color for sleep */
+    }
+    
+    .button.yoga {
+      background-color: #FF1493;  /* Change color for yoga */
+    }
+    
+    .button.gym {
+      background-color: #FF4500;  /* Change color for gym */
+    }
+    
+    .button.walking {
+      background-color: #32CD32;  /* Change color for walking */
+    }
+    
+    .button.reading {
+      background-color: #800080;  /* Change color for reading */
+    }
+    
+    .button.skills-development {
+      background-color: #FF8C00;  /* Change color for skills development */
+    }
+    
+    .button.water-intake {
+      background-color: #FFFF00;  /* Change color for water intake */
+    }
+  </style>
+  <script>
+    function navigateToRoutine() {
+      window.location.href = "{% url 'records:addrecord' %}";
+    }
+  </script>
+  <script>
+    function navigateToProgressCard() {
+      window.location.href = "{% url 'records:progresscard' %}";
+    }
+  </script>
+</head>
+<body>
+  <div class="button-wrapper">
+  <div class="button-container1">
+    <button class="button" onclick="navigateToProgressCard()">PROGRESS CARD</button>
+    <button class="button" onclick="navigateToRoutine()">ADD TODAY'S ROUTINE</button>
+  </div>
+  <div class="button-container2">
+    <button class="button sleep" onclick="navigateToProgressCard('sleep')">Mode Sleep: {{ sleep_mode }}</button>
+    <button class="button yoga" onclick="navigateToProgressCard('yoga')">Mode Yoga: {{ yoga_mode }}</button>
+    <button class="button gym" onclick="navigateToProgressCard('gym')">Mode Gym: {{ gym_mode }}</button>
+    <button class="button walking" onclick="navigateToProgressCard('walking')">Mode Walking: {{ walking_mode }}</button>
+    <button class="button reading" onclick="navigateToProgressCard('reading')">Mode Reading: {{ reading_mode }}</button>
+    <button class="button skills-development" onclick="navigateToProgressCard('skills_development')">Mode Skills Development: {{ skills_development_mode }}</button>
+    <button class="button water-intake" onclick="navigateToProgressCard('water_intake')">Mode Water Intake: {{ water_intake_mode }}</button>
+  </div>
+</div>
+</body>
+</html>
