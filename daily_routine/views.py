@@ -13,7 +13,7 @@ def home(request):
     water_intake_mode = Record.objects.values('water_intake').annotate(mode_count=Count('water_intake')).order_by('-mode_count').first()
 
     context = {
-        'sleep_mode': f"{sleep_mode['sleep']} hours" if sleep_mode else None,
+        'sleep_mode': f"{sleep_mode['sleep']}" if sleep_mode else None,
         'yoga_mode': f"{yoga_mode['yoga']} mins" if yoga_mode else None,
         'gym_mode': f"{gym_mode['gym']} mins" if gym_mode else None,
         'walking_mode': f"{walking_mode['walking']} mins" if walking_mode else None,

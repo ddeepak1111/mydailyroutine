@@ -3,10 +3,10 @@ from .models import Record
 
 class RecordForm(forms.ModelForm):
     SLEEP_CHOICES = [
-        ('1-3', '1 to 3 hours scores 15'),
-        ('3-5', '3 to 5 hours scores 10'),
-        ('5-7', '5 to 7 hours scores 5'),
-        ('7+', 'Above 7 hours scores 0')
+        ('1-3 Hrs', '1 to 3 hours scores 15'),
+        ('3-5 Hrs', '3 to 5 hours scores 10'),
+        ('5-7 Hrs', '5 to 7 hours scores 5'),
+        ('7+ Hrs', 'Above 7 hours scores 0')
     ]
 
     CHOICES = [

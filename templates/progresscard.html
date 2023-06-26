@@ -55,13 +55,13 @@
         <tr>
           <td><a href="{% url 'records:recorddetails' record.recordid %}">{{ record.recordid }}</a></td>
           <td>{{ record.sleep }}</td>
-          <td>{{ record.yoga }}</td>
-          <td>{{ record.gym }}</td>
-          <td>{{ record.walking }}</td>
-          <td>{{ record.reading }}</td>
-          <td>{{ record.skills_development }}</td>
+          <td>{{ record.yoga }} mins</td>
+          <td>{{ record.gym }} mins</td>
+          <td>{{ record.walking }} mins</td>
+          <td>{{ record.reading }} mins</td>
+          <td>{{ record.skills_development }} mins</td>
           <td>{{ record.water_intake }}</td>
-          <td>{{ record.expenses }}</td>
+          <td>Rs.{{ record.expenses }} /-</td>
           <td>{{ record.todays_dairy }}</td>
         </tr>
       {% endfor %}

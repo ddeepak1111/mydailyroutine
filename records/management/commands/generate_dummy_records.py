@@ -14,7 +14,7 @@ class Command(BaseCommand):
             current_date = date.today() - timedelta(days=i)
             record = Record()
             record.recordid = current_date.strftime('%Y%m%d')
-            record.sleep = random.choice(['1-3', '3-5', '5-7', '7+'])
+            record.sleep = random.choice(['1-3 Hrs', '3-5 Hrs', '5-7 Hrs', '7+ Hrs'])
             record.yoga = random.choice(['60', '45', '30', '15'])
             record.gym = random.choice(['60', '45', '30', '15'])
             record.walking = random.choice(['60', '45', '30', '15'])

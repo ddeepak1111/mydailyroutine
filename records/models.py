@@ -16,10 +16,10 @@ class Record(models.Model):
     recordid = models.CharField(max_length=8, primary_key=True, editable=False)
 
     SLEEP_CHOICES = [
-        ('1-3', '1 to 3 hours scores 15'),
-        ('3-5', '3 to 5 hours scores 10'),
-        ('5-7', '5 to 7 hours scores 5'),
-        ('7+', 'Above 7 hours scores 0')
+        ('1-3 Hrs', '1 to 3 hours scores 15'),
+        ('3-5 Hrs', '3 to 5 hours scores 10'),
+        ('5-7 Hrs', '5 to 7 hours scores 5'),
+        ('7+ Hrs', 'Above 7 hours scores 0')
     ]
 
     CHOICES = [
@@ -36,7 +36,7 @@ class Record(models.Model):
         ('1L','3L scores 1'),
     ]
 
-    sleep = models.CharField(max_length=4, choices=SLEEP_CHOICES)
+    sleep = models.CharField(max_length=10, choices=SLEEP_CHOICES)
     yoga = models.CharField(max_length=4, choices=CHOICES)
     gym = models.CharField(max_length=4, choices=CHOICES)
     walking = models.CharField(max_length=4, choices=CHOICES)
@@ -49,10 +49,10 @@ class Record(models.Model):
 
     def calculate_scores(self):
         score_mapping = {
-            '1-3': 15,
-            '3-5': 10,
-            '5-7': 5,
-            '7+': 0,
+            '1-3 Hrs': 15,
+            '3-5 Hrs': 10,
+            '5-7 Hrs': 5,
+            '7+ Hrs': 0,
             '60': 10,
             '45': 5,
             '30': 2,
