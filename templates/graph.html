@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="graph-container"></div>
+
+    <script type="text/javascript">
+        // Retrieve the graph data from the template context
+        var graphData = JSON.parse('{{ graph_data|safe }}');
+
+        // Render the graph using Plotly.js
+        Plotly.newPlot('graph-container', graphData.data, graphData.layout);
+    </script>
+</body>
+</html>

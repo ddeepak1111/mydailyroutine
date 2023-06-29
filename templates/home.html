@@ -80,12 +80,18 @@
       window.location.href = "{% url 'records:progresscard' %}";
     }
   </script>
+  <script>
+    function navigateToGraphs() {
+      window.location.href = "{% url 'graph' %}";
+    }
+  </script>
 </head>
 <body>
   <div class="button-wrapper">
-  <div class="button-container1">
+  <div class="button-container2">
     <button class="button" onclick="navigateToProgressCard()">PROGRESS CARD</button>
     <button class="button" onclick="navigateToRoutine()">ADD TODAY'S ROUTINE</button>
+    <button class="button" onclick="navigateToGraphs()">GRAPHS</button>
   </div>
   <div class="button-container2">
     <button class="button sleep" onclick="navigateToProgressCard('sleep')">Mode Sleep: {{ sleep_mode }}</button>

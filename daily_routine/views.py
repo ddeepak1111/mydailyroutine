@@ -1,3 +1,4 @@
+import plotly.graph_objects as go
 from django.shortcuts import render
 from django.db.models import Count
 
@@ -23,3 +24,30 @@ def home(request):
     }
 
     return render(request, 'home.html', context)
+
+
+import json
+
+def graph(request):
+    # Retrieve the sleeping hours data from the database
+    records = Record.objects.all().order_by('recordid')
+    dates = [record.recordid for record in records]
+    sleeping_hours = [record.sleep for record in records]
+
+    # Create a bar chart using Plotly
+    fig = go.Figure(data=go.Bar(x=dates, y=sleeping_hours))
+
+    # Configure the layout of the graph
+    fig.update_layout(
+        title='Sleeping Hours',
+        xaxis_title='Date',
+        yaxis_title='Sleeping Hours'
+    )
+
+    # Convert the graph to JSON format
+    graph_data = fig.to_json()
+
+    # Pass the graph JSON to the template
+    context = {'graph_data': graph_data}
+
+    return render(request, 'graph.html', context)

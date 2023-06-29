@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
     path('record/', include('records.urls')),
+    path('graph/',views.graph,name='graph'),
 ]
